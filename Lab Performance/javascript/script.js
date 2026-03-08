@@ -15,7 +15,7 @@ function submit_form()
 
     if(fname=="" || lname=="" || email=="" || phone=="" || message=="")
     {
-        alert("Field Value need to be filled up");
+        console.log("Field Value need to be filled up");
         return false;
     }
 
