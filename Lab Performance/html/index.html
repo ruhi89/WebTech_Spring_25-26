@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <h2 class="title">Contact us</h2>
+
+    <div class="container">
+        <form onsubmit="return submit_form();">
+
+            <table>
+
+                <tr>
+                    <td>
+                        <label><b>FIRST NAME</b></label><br>
+                        <input type="text" id="fname">
+                    </td>
+
+                    <td>
+                        <label><b>LAST NAME</b></label><br>
+                        <input type="text" id="lname">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label><b>EMAIL</b></label><br>
+                        <input type="email" id="email">
+                    </td>
+
+                    <td>
+                        <label><b>PHONE NUMBER</b></label><br>
+                        <input type="tel" id="phone">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <label>WHAT DO YOU HAVE IN MIND</label><br>
+                        <textarea id="message" placeholder="Please enter query..."></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="text-align:center;">
+                        <button type="submit">Submit</button>
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+    </div>
+
+<script src="../javascript/script.js"></script>
+
+</body>
+</html>
