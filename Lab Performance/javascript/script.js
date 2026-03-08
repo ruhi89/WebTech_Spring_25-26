@@ -1,9 +1,5 @@
 console.log("Connect HTML Page");
 
-var a = ["Form", "Validation"];
-
-console.log("Index:", 0, "Item:", a[0]);
-console.log("Index:", 1, "Item:", a[1]);
 
 function submit_form()
 {
@@ -15,6 +11,7 @@ function submit_form()
 
     if(fname=="" || lname=="" || email=="" || phone=="" || message=="")
     {
+        document.getElementById("errorMsg").innerHTML="Field Value need to be filled up";
         console.log("Field Value need to be filled up");
         return false;
     }
