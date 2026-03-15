@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Product Management Page</title>
+    <link rel="stylesheet" href="../Design/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Product Management Page</h2>
+      <form>
+        <label>Unit Price:</label>
+        <input type="number" id="unitPrice" value="1000" readonly />
+
+        <label>Quantity per Day:</label>
+        <input
+          type="number"
+          id="quantity"
+          placeholder="Enter quantity per day"
+          onblur="return validateQuantity();"
+        />
+        <p id="error" class="error"></p>
+        <label>Total Price for 30 Days:</label>
+        <input type="number" id="totalPrice" value="0" readonly />
+      </form>
+    </div>
+
+    <script src="../JS/validation.js"></script>
+  </body>
+</html>
