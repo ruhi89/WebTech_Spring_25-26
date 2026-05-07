@@ -1,4 +1,6 @@
 <?php
+session_start();
+require_once "../Model/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -19,29 +21,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } elseif ($website !== "" && !filter_var($website, FILTER_VALIDATE_URL)) {
             echo "Invalid Website URL.<br>";
         } else {
-            $data = [
-                "name" => $name,
-                "email" => $email,
-                "website" => $website,
-                "comment" => $comment,
-                "gender" => $gender
-            ];
+            // $data = [
+            //     "name" => $name,
+            //     "email" => $email,
+            //     "website" => $website,
+            //     "comment" => $comment,
+            //     "gender" => $gender
+            // ];
 
-            $file = "../data.json";
+            // $file = "../data.json";
 
-            if (file_exists($file)) {
-                $existingData = json_decode(file_get_contents($file), true);
+            // if (file_exists($file)) {
+            //     $existingData = json_decode(file_get_contents($file), true);
+            // } else {
+            //     $existingData = [];
+            // }
+
+            // $existingData[] = $data;
+
+            // file_put_contents($file, json_encode($existingData, JSON_PRETTY_PRINT));
+            // setcookie("user_name", $name, time() + (86400 * 7));
+            // setcookie("user_email", $email, time() + (86400 * 7));
+
+            // echo "Data saved successfully & cookies set.";
+            $db = new db();
+            $registration = $db->registration($name, $email, $website, $comment, $gender);
+            if ($registration) {
+                echo "Data inserted successfully.";
             } else {
-                $existingData = [];
+                echo "Error inserting data.";
             }
-
-            $existingData[] = $data;
-
-            file_put_contents($file, json_encode($existingData, JSON_PRETTY_PRINT));
-            setcookie("user_name", $name, time() + (86400 * 7));
-            setcookie("user_email", $email, time() + (86400 * 7));
-
-            echo "Data saved successfully & cookies set.";
         }
     }
 }
